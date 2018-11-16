@@ -1,10 +1,23 @@
 package object;
 
 public class User {
+    private int id;
     private String userName;
     private String passWord;
     private String address;
     private String phone;
+
+    public User (int id, String userName, String passWord, String address, String phone){
+        this.id = id;
+        this.userName = userName;
+        this.passWord = passWord;
+        this.address = address;
+        this.phone = phone;
+    }
+
+    public void setId(int id) { this.id = id; }
+
+    public int getId() { return id; }
 
     public void setUserName(String username) {
         this.userName = username;
@@ -18,7 +31,7 @@ public class User {
         this.passWord = password;
     }
 
-    public String getPassword() {
+    public String getPassWord() {
         return passWord;
     }
 
