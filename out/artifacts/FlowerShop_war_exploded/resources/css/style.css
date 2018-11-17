@@ -58,7 +58,7 @@ div#login-area {
     border-top-right-radius: 0;
 }
 
-.product-image {
+.flower-image {
     width: 100px;
 }
 
@@ -89,4 +89,8 @@ flower-name {
     text-decoration: none;
     background-color: transparent;
     -webkit-text-decoration-skip: objects
+}
+
+#icon-basket{
+    color:#007bff;
 }

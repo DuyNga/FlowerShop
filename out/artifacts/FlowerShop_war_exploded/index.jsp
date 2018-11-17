@@ -5,7 +5,7 @@
 <div class="row">
 
   <c:forEach items="${flowers}" var="flower">
-    <c:url value="shopping-cart" var="linkAddToCart">
+    <c:url value='shopping-cart' var="linkAddToCart">
       <c:param name="flowerId" value="${flower.id}"/>
     </c:url>
     <div class="col-lg-3 col-md-4 col-xs-6">
@@ -15,7 +15,7 @@
           <h4 class="card-title">
             <span class="flower-name">${flower.flowerName}</span>
           </h4>
-          <h5>$24.99</h5>
+          <h5>$30.99</h5>
           <p class="card-text">${flower.shortDescription}</p>
         </div>
         <div class="card-footer text-center">
