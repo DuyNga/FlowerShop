@@ -31,7 +31,7 @@ public class CheckoutFilter implements Filter{
     HttpServletRequest request = (HttpServletRequest) servletRequest;
     HttpServletResponse response = (HttpServletResponse) servletResponse;
     HttpSession session = request.getSession();
-    if (session != null && session.getAttribute("email") == null) {
+    if (session != null && session.getAttribute("username") == null) {
       session.setAttribute("oldServlet", request.getServletPath().substring(1));
       response.sendRedirect("login");
       return;

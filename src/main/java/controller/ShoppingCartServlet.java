@@ -13,14 +13,15 @@ import java.io.IOException;
 
 @WebServlet("/shopping-cart")
 public class ShoppingCartServlet extends HttpServlet {
-    private  ShoppingCartDao shoppingCartDao;
+    private ShoppingCartDao shoppingCartDao;
+
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession session = req.getSession(true);
-        if(session != null && session.getAttribute("shoppingCartDao") != null){
+        if (session != null && session.getAttribute("shoppingCartDao") != null) {
             shoppingCartDao = (ShoppingCartDao) session.getAttribute("shoppingCartDao");
-        }else {
+        } else {
             shoppingCartDao = new ShoppingCartDao();
             session.setAttribute("shoppingCartDao", shoppingCartDao);
         }

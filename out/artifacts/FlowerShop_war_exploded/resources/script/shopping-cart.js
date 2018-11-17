@@ -32,13 +32,13 @@ $(function(){
 
     $(".qty").change(qtyChange);
     function qtyChange() {
-        let productId = $(this).attr("productId");
-        console.log("product id", productId, "changed the value");
+        let flowerId = $(this).attr("flowerId");
+        console.log("flower id", flowerId, "changed the value");
         let qty = $(this).val();
-        let item = {id: productId, qty: qty};
+        let item = {id: flowerId, qty: qty};
 
         $.post("shopping-cart/update", {
-            product: JSON.stringify(item)
+            flower: JSON.stringify(item)
         }).done(updatedItemSuccess).fail(error);
     }
 
@@ -48,29 +48,14 @@ $(function(){
         calPrice();
     }
 
-    $("#btnRemove").click(() => {
-        let removedTtems = [];
-        $(".check:checked").each((i, val) => {
-            console.log("checked", $(val).val(), $(val).is(":checked"));
-            let id = parseInt($(val).val());
-            let product = {};
-            product.id = id;
-            product.qty = 0;
-            removedTtems.push(product);
-        });
-        console.log("removedTtems", removedTtems);
-        if (removedTtems.length > 0) {
-            $.post("shopping-cart/remove", {
-                products: JSON.stringify(removedTtems)
-            }).done(displayMycart).fail(error);
-        }
-    });
-
     function displayMycart(items) {
+        let data = $("#num-of-items").text();
         console.log("displayMycart", items);
         JSON.parse(items).forEach( p => {
             $("#item_"+p.id).remove();
+            data--;
         });
+        $("#num-of-items").text(data);
         formatMoney();
         calPrice();
     }
@@ -79,9 +64,27 @@ $(function(){
         console.error(err);
     }
 
+    $("#btnRemove").click(() => {
+        let removedTtems = [];
+        $(".check:checked").each((i, val) => {
+            console.log("checked", $(val).val(), $(val).is(":checked"));
+            let id = parseInt($(val).val());
+            let flower = {};
+            flower.id = id;
+            flower.qty = 0;
+            removedTtems.push(flower);
+        });
+        console.log("removedTtems", removedTtems);
+        if (removedTtems.length > 0) {
+            $.post("shopping-cart/remove", {
+                flowers: JSON.stringify(removedTtems)
+            }).done(displayMycart).fail(error);
+        }
+    });
+
     // continue shopping
     $("#btnContinueShopping").click(()=>{
-        $(location).attr("href", "/cart");
+        $(location).attr("href", "/flower-list");
     });
 
     // navigate to checkout

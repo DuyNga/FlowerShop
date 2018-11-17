@@ -38,7 +38,7 @@ $(function(){
     $('#myModal').on('hidden.bs.modal', function (e) {
         console.log("Hide");
         if(success) {
-            $(location).attr("href", "/cart");
+            $(location).attr("href", "/flower-list");
         }
     });
 

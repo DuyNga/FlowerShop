@@ -31,8 +31,8 @@ public class ShoppingCartDao {
 
     }
 
-    public void removeProduct(int productId) {
-        myCart = myCart.stream().filter(p -> p.getFlower().getId() != productId).collect(Collectors.toList());
+    public void removeFlower(int flowerId) {
+        myCart = myCart.stream().filter(p -> p.getFlower().getId() != flowerId).collect(Collectors.toList());
     }
 
     public void updateQty(int productId, int qty) {

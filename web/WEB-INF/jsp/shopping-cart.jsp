@@ -20,7 +20,7 @@
                     <td><input class="check" type="checkbox" value="${item.flower.id}" id="optionsCheckbox"></td>
                     <td class="muted center_text"><a href="flower?id=${item.flower.id}"><img src="<c:url value="resources/images/${item.flower.imageName}" />" class="flower-image"></a></td>
                     <td>${item.flower.flowerName}</td>
-                    <td><input class="qty" type="number" placeholder="1" class="input-mini" value="${item.qty}" flowerid="${item.flower.id}"></td>
+                    <td><input class="qty" type="number" placeholder="1" class="input-mini" value="${item.qty}" min="1" flowerid="${item.flower.id}"></td>
                     <td class="price format-money">${item.price}</td>
                     <td class="total format-money">${item.price * item.qty}</td>
                 </tr>

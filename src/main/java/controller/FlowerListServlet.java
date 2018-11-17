@@ -19,7 +19,6 @@ public class FlowerListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Flower> flowers = flowerDao.getFlowerList();
-        System.out.print("%%%%%%%%%%%%%%%%%%%%"+flowers.size());
         req.setAttribute("flowers", flowers);
         RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
         requestDispatcher.forward(req, resp);

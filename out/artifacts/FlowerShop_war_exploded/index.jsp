@@ -15,7 +15,7 @@
           <h4 class="card-title">
             <span class="flower-name">${flower.flowerName}</span>
           </h4>
-          <h5>$34.99</h5>
+          <h5>$${flower.price}</h5>
           <p class="card-text">${flower.shortDescription}</p>
         </div>
         <div class="card-footer text-center">
