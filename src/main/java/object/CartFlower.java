@@ -1,18 +1,22 @@
 package object;
 
 public class CartFlower {
-    private Flower product;
+    private Flower flower;
     private double price;
     private int qty;
 
-    public CartFlower(Flower product, double price, int qty) {
-        this.product = product;
+    public CartFlower(Flower flower, double price, int qty) {
+        this.flower = flower;
         this.price = price;
         this.qty = qty;
     }
 
     public Flower getFlower() {
-        return product;
+        return flower;
+    }
+
+    public void setFlower(Flower flower) {
+        this.flower = flower;
     }
 
     public double getPrice() {

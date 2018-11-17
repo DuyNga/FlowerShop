@@ -14,7 +14,7 @@ public class ShoppingCartDao {
     private FlowerDao productDao = new FlowerDao();
     private List<CartFlower> myCart = new ArrayList<>();
 
-    public void addProduct(int productId) {
+    public void addFlower(int productId) {
         // Check whether the product is existing in the current cart
         Optional<CartFlower> existProduct = myCart.stream().filter(p -> p.getFlower().getId() == productId).findFirst();
         if (!existProduct.isPresent()) {

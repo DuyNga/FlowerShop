@@ -33,16 +33,16 @@
 </div>
 
 <!-- Bootstrap core JavaScript -->
-<script src="<c:url value="resources/js/jquery.min.js" />"></script>
-<script src="<c:url value="resources/js/bootstrap.bundle.min.js"/>"></script>
-<script src="<c:url value="resources/js/script.js"/>"></script>
+<script src="<c:url value="resources/script/jquery.min.js" />"></script>
+<script src="<c:url value="resources/script/bootstrap.bundle.min.js"/>"></script>
+<script src="<c:url value="resources/script/script.js"/>"></script>
 
 <c:if test="${pageContext.request.servletPath.contains(\"shopping-cart\")}">
-    <script src="<c:url value="resources/js/shopping-cart.js"/>"></script>
+    <script src="<c:url value="resources/script/shopping-cart.js"/>"></script>
 </c:if>
 
 <c:if test="${pageContext.request.servletPath.contains(\"checkout\")}">
-    <script src="<c:url value="resources/js/checkout.js"/>"></script>
+    <script src="<c:url value="resources/script/checkout.js"/>"></script>
 </c:if>
 
 </body>

@@ -12,7 +12,7 @@ public class FlowerDao {
     private Map<Integer, Flower> flowersDb = new HashMap<>();
 
     {
-        flowersDb.put(1, new Flower(1, "COMPASSION", "COMPASSION.jpg", "", "", 30));
+        flowersDb.put(1, new Flower(1, "THOUGHTFUL", "THOUGHTFUL.jpg", "", "", 30));
         flowersDb.put(2, new Flower(2, "SIERRA SUNSET", "SIERRA_SUNSET.jpg", "", "", 42));
         flowersDb.put(3, new Flower(3, "ABOVE & BEYOND", "ABOVE_BEYOND.jpg", "", "", 30));
         flowersDb.put(4, new Flower(4, "CHARISMA", "CHARISMA.jpg", "", "", 30));
@@ -22,6 +22,8 @@ public class FlowerDao {
         flowersDb.put(8, new Flower(8, "YOU ROCK", "YOU_ROCK.jpg", "", "", 30));
         flowersDb.put(9, new Flower(9, "ETERNAL", "ETERNAL.jpg", "", "", 30));
         flowersDb.put(10, new Flower(10, "BOLD", "BOLD.jpg", "", "", 30));
+        flowersDb.put(11, new Flower(11, "UNBREAKABLE", "UNBREAKABLE.jpg", "", "", 30));
+        flowersDb.put(12, new Flower(12, "COMPASSION", "COMPASSION.jpg", "", "", 30));
     }
 
     public List<Flower> getFlowerByPrice(double min, double max) {

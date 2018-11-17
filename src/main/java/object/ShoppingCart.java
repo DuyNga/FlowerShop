@@ -1,16 +1,16 @@
 package object;
 
 public class ShoppingCart {
-    private Flower product;
+
+    private Flower flower;
     private double price;
     private int quantity;
-
-    public void setProduct(Flower product) {
-        this.product = product;
+    public Flower getFlower() {
+        return flower;
     }
 
-    public Flower getProduct() {
-        return product;
+    public void setFlower(Flower flower) {
+        this.flower = flower;
     }
 
     public void setPrice(double price) {

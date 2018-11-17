@@ -35,7 +35,7 @@
                     <!--<a href="shopping-cart" class="list-group-item d-flex justify-content-between align-items-center">-->
                     <a class="nav-link" href="shopping-cart" >
                         <span>
-                        <i class="fa fa-shopping-cart"></i>
+                        <i class="fa fa-shopping-cart" id="icon-basket"></i>
                         <span id="num-of-items" class="badge badge-primary badge-pill">${numItems}</span>
                     </span>
                     </a>

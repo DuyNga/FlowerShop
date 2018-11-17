@@ -5,7 +5,7 @@
 <div class="row">
 
   <c:forEach items="${flowers}" var="flower">
-    <c:url value="shopping-cart" var="linkAddToCart">
+    <c:url value='shopping-cart' var="linkAddToCart">
       <c:param name="flowerId" value="${flower.id}"/>
     </c:url>
     <div class="col-lg-3 col-md-4 col-xs-6">
