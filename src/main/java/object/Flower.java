@@ -1,16 +1,16 @@
 package object;
 
-public class Product {
+public class Flower {
     private int id;
-    private String productName;
+    private String flowerName;
     private String imageName;
     private String fullDescription;
     private String shortDescription;
     private double price;
 
-    public Product (int id, String productName, String imageName, String fullDescription, String shortDescription, double price){
+    public Flower(int id, String flowerName, String imageName, String fullDescription, String shortDescription, double price){
         this.id = id;
-        this.productName = productName;
+        this.flowerName = flowerName;
         this.imageName = imageName;
         this.fullDescription = fullDescription;
         this.shortDescription = shortDescription;
@@ -25,12 +25,12 @@ public class Product {
         return id;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setFlowerName(String flowerName) {
+        this.flowerName = flowerName;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getFlowerName() {
+        return flowerName;
     }
 
     public void setImageName(String imageName) {
