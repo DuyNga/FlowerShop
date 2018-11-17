@@ -2,10 +2,10 @@
 <jsp:include page="WEB-INF/jsp/component/header.jsp"></jsp:include>
 
 <div class="container">
-  <div class="search">
-    Search: $<input type="number" name="fromvalue" id="fromvalue"/> to $<input type="number" name="tovalue" id="tovalue"/> <br />
-    <input type="button" name="search" id="search" /> Go
-  </div>
+    <div>
+        Search: $<input type="number" name="fromvalue" id="fromvalue" min="0"/> to $<input type="number" name="tovalue" id="tovalue" min="0"/>
+        <button class="btn btn-primary btn-lg active addToCart" type="submit" id="search">Do search</button>
+    </div>
 <div class="row">
   <c:forEach items="${flowers}" var="flower">
     <c:url value='shopping-cart' var="linkAddToCart">
