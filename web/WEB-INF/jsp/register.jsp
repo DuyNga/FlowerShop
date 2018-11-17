@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control form-control-lg rounded-0" id="password"
-                                       name="password" placeholder="at least 6 characters" required pattern=".{6,}">
+                                       name="password" placeholder="at least 5 characters" required pattern=".{5,}">
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
