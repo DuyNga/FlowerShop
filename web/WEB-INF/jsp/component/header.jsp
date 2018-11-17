@@ -31,6 +31,15 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <!--<a href="shopping-cart" class="list-group-item d-flex justify-content-between align-items-center">-->
+                    <a class="nav-link" href="shopping-cart" >
+                        <span>
+                        <i class="fa fa-shopping-cart"></i>
+                        <span id="num-of-items" class="badge badge-primary badge-pill">${numItems}</span>
+                    </span>
+                    </a>
+                </li>
                 <c:if test="${email == null}">
                     <li class="nav-item active">
                         <a class="nav-link" href="login">Login</a>

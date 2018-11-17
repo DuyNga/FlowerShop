@@ -13,7 +13,7 @@
         <a href="flower?id=${flower.id}"><img class="card-img-top" src="<c:url value="resources/images/${flower.imageName}" />" alt=""></a>
         <div class="card-body">
           <h4 class="card-title">
-            <a href="flower?id=${flower.id}">${flower.flowerName}</a>
+            <span class="flower-name">${flower.flowerName}</span>
           </h4>
           <h5>$24.99</h5>
           <p class="card-text">${flower.shortDescription}</p>
