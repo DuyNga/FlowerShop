@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="component/header.jsp"></jsp:include>
+<div class="container">
     <div class="row shopping-cart">
         <!-- <h5> Shopping Cart</h5> -->
         <table class="table table-bordered table-striped">
@@ -18,7 +19,7 @@
                 <tr class="item" id="item_${item.flower.id}">
                     <td><input class="check" type="checkbox" value="${item.flower.id}" id="optionsCheckbox"></td>
                     <td class="muted center_text"><a href="flower?id=${item.flower.id}"><img src="<c:url value="resources/images/${item.flower.imageName}" />" class="flower-image"></a></td>
-                    <td>${item.flower.name}</td>
+                    <td>${item.flower.flowerName}</td>
                     <td><input class="qty" type="number" placeholder="1" class="input-mini" value="${item.qty}" flowerid="${item.flower.id}"></td>
                     <td class="price format-money">${item.price}</td>
                     <td class="total format-money">${item.price * item.qty}</td>
@@ -52,4 +53,5 @@
             </button>
         </div>
     </div>
+</div>
 <jsp:include page="component/footer.jsp"></jsp:include>

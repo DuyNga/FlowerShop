@@ -48,6 +48,19 @@ $(function(){
         calPrice();
     }
 
+    function displayMycart(items) {
+        console.log("displayMycart", items);
+        JSON.parse(items).forEach( p => {
+            $("#item_"+p.id).remove();
+        });
+        formatMoney();
+        calPrice();
+    }
+
+    function error(err) {
+        console.error(err);
+    }
+
     $("#btnRemove").click(() => {
         let removedTtems = [];
         $(".check:checked").each((i, val) => {
@@ -65,19 +78,6 @@ $(function(){
             }).done(displayMycart).fail(error);
         }
     });
-
-    function displayMycart(items) {
-        console.log("displayMycart", items);
-        JSON.parse(items).forEach( p => {
-            $("#item_"+p.id).remove();
-        });
-        formatMoney();
-        calPrice();
-    }
-
-    function error(err) {
-        console.error(err);
-    }
 
     // continue shopping
     $("#btnContinueShopping").click(()=>{
