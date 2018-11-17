@@ -19,7 +19,7 @@
           <p class="card-text">${flower.shortDescription}</p>
         </div>
         <div class="card-footer text-center">
-          <a href="${linkAddToCart}" class="btn btn-primary btn-lg active addToCart" role="button" aria-pressed="true">Add to cart</a>
+          <a href="${linkAddToCart}"  class="btn btn-primary btn-lg active addToCart" role="button" aria-pressed="true">Add to cart</a>
         </div>
       </div>
     </div>
