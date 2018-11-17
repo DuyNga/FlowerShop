@@ -28,12 +28,12 @@ public class CheckoutFilter implements Filter{
   @Override
   public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
                        FilterChain filterChain) throws IOException, ServletException {
-    HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
-    HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
-    HttpSession session = httpServletRequest.getSession();
+    HttpServletRequest request = (HttpServletRequest) servletRequest;
+    HttpServletResponse response = (HttpServletResponse) servletResponse;
+    HttpSession session = request.getSession();
     if (session != null && session.getAttribute("email") == null) {
-      session.setAttribute("oldServlet", httpServletRequest.getServletPath().substring(1));
-      httpServletResponse.sendRedirect("login");
+      session.setAttribute("oldServlet", request.getServletPath().substring(1));
+      response.sendRedirect("login");
       return;
     }
     filterChain.doFilter(servletRequest, servletResponse);
