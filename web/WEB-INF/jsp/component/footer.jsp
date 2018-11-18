@@ -1,12 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-</div>
-<!-- /.col-lg-9 -->
-
-</div>
-<!-- /.row -->
-
-</div>
-<!-- /.container -->
 
 <!-- Footer -->
 <footer class="py-5 bg-dark">
@@ -36,7 +28,6 @@
 <script src="<c:url value="resources/script/jquery.min.js" />"></script>
 <script src="<c:url value="resources/script/bootstrap.bundle.min.js"/>"></script>
 <script src="<c:url value="resources/script/script.js"/>"></script>
-<script src="<c:url value="resources/script/search.js"/>"></script>
 
 <c:if test="${pageContext.request.servletPath.contains(\"shopping-cart\")}">
     <script src="<c:url value="resources/script/shopping-cart.js"/>"></script>

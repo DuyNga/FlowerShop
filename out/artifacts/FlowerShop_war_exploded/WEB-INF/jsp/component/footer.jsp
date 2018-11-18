@@ -1,12 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-</div>
-<!-- /.col-lg-9 -->
-
-</div>
-<!-- /.row -->
-
-</div>
-<!-- /.container -->
 
 <!-- Footer -->
 <footer class="py-5 bg-dark">

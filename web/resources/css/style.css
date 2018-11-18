@@ -94,3 +94,27 @@ flower-name {
 #icon-basket{
     color:#007bff;
 }
+
+
+div.item{
+    margin-bottom: 15px !important;
+}
+
+div.search{
+    width: 700px;
+    margin: auto;
+}
+
+div.jSearch{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+div.just-label{
+    width: 40px;
+}
+
+div.just-label-to{
+    width: 20px;
+}
