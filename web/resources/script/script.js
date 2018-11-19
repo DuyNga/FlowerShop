@@ -19,4 +19,36 @@ $(function(){
         });
         return vars;
     }
+
+    // $("#btnRegister").click(register);
+    //
+    // function register() {
+    //     let user = {};
+    //     user.userName = $("#username").val();
+    //     user.passWord = $("#password").val();
+    //     user.email = $("#email").val();
+    //     user.fullName = $("#fullname").val();
+    //     user.phone = $("#phone").val();
+    //     user.address = $("#address").val();
+    //
+    //     $.ajax({
+    //         "url": "register",
+    //         "type": "POST",
+    //         "data": {"userNew": JSON.stringify(user)},
+    //         "success": function () {
+    //             toastr["success"](user.username + " is created!");
+    //             $(location).attr("href", "/profile");
+    //         }
+    //     });
+
+    // $.post("register", {userNew: JSON.stringify(user)})
+    //     .success(function () {
+    //         toastr["success"](user.username + " is created!");
+    //         $(location).attr("href", "/profile");
+    //     })
+    //     .fail(function () {
+    //         toastr["error"]("Error create user " + user.username + ".");
+    //         $(location).attr("href", "/WEB-INF/jsp/register.jsp");
+    //     })
+    //}
 })

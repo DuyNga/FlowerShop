@@ -1,5 +1,6 @@
 package controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.UserDao;
 
 import javax.servlet.ServletException;
@@ -12,6 +13,8 @@ import java.io.IOException;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet {
+    ObjectMapper mapper = new ObjectMapper();
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(req, resp);
@@ -25,25 +28,29 @@ public class RegisterServlet extends HttpServlet {
         String fullName = req.getParameter("fullname");
         String address = req.getParameter("address");
         String phone = req.getParameter("phone");
+//        String json = req.getParameter("userNew");
+//        User userNew = mapper.readValue(req.getParameter("userNew"), User.class);
 
-        UserDao userDb = (UserDao)getServletContext().getAttribute("userDb");
-        if (userDb.addUser(userName, passWord, fullName, email, address, phone))
-        {
+        UserDao userDb = (UserDao) getServletContext().getAttribute("userDb");
+        if (userDb.addUser(userName, passWord, fullName, email, address, phone)) {
+            //if (userDb.addUser(userNew.getUserName(), userNew.getPassWord(), userNew.getFullName(), userNew.getEmail(), userNew.getAddress(), userNew.getPhone())) {
             Cookie cookie1 = new Cookie("username", userName);
             cookie1.setMaxAge(3600);
             Cookie cookie2 = new Cookie("password", passWord);
             cookie2.setMaxAge(3600);
             resp.addCookie(cookie1);
             resp.addCookie(cookie2);
-            req.getSession().setAttribute("username" , userName);
+            req.getSession().setAttribute("username", userName);
             req.getSession().setAttribute("username_label", userName);
             resp.sendRedirect("/profile");
+        } else {
+            req.setAttribute("error_register", "This username is exists.");
+            req.setAttribute("username", userName);
+            req.setAttribute("email", email);
+            req.setAttribute("fullname", fullName);
+            req.setAttribute("address", address);
+            req.setAttribute("phone", phone);
+            req.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(req, resp);
         }
-        else {
-            req.setAttribute("error_register", "Incorrect some information.");
-            req.getRequestDispatcher("/WEB-INF/jsp/register.jsp").forward(req,resp);
-        }
-
-
     }
 }

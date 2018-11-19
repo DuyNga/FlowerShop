@@ -9,7 +9,12 @@ public class User {
     private String address;
     private String phone;
 
+    public User (){
+        super();
+    }
+
     public User (int id, String userName, String passWord, String fullName, String email, String address, String phone){
+        super();
         this.id = id;
         this.userName = userName;
         this.passWord = passWord;
