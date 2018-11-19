@@ -2,17 +2,6 @@ body {
     padding-top: 54px;
 }
 
-@media (min-width: 992px) {
-    body {
-        padding-top: 56px;
-    }
-}
-
-div.carousel-item img{
-    height: 280px !important;
-    width: 100% !important;
-}
-
 div.card > a > img{
     height: 100% !important;
     width: 100% !important;
