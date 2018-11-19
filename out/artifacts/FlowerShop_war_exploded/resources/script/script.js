@@ -5,6 +5,7 @@ $(function(){
         $.post($(this).attr('href')).done(function(data){
             console.log(data);
             $("#num-of-items").text(data);
+            toastr["success"](`${} is added! Please check the cart for details.`);
         });
         return false;
     })
