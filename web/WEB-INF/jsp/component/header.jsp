@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="<c:url value="resources/css/style.css" />" rel="stylesheet">
+    <link href="<c:url value="resources/css/toastr.css" />" rel="stylesheet">
     <link rel="icon" type="image/png" href="resources/images/icon.png" sizes="16x16">
 
 </head>
