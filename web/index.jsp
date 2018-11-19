@@ -36,7 +36,7 @@
         <a href="flower?id=${flower.id}"><img class="card-img-top" src="<c:url value="resources/images/${flower.imageName}" />" alt=${flower.shortDescription}></a>
         <div class="card-body">
           <h4 class="card-title">
-            <span class="flower-name">${flower.flowerName}</span>
+            <span class="flower-name" id="item_${flower.id}">${flower.flowerName}</span>
           </h4>
           <h5>$${flower.price}</h5>
           <p class="card-text">${flower.shortDescription}</p>

@@ -21,7 +21,7 @@
         <tr class="item">
             <td>${flower.flowerName}</td>
             <td>${flower.fullDescription}</td>
-            <td><img src="resources/images/${flower.imageName}" class="product-image"></td>
+            <td><img src="resources/images/${flower.imageName}" class="product-image" alt=${flower.shortDescription}></td>
             <td>${flower.price}</td>
         </tr>
         </tbody>
