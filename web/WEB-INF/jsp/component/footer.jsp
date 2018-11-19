@@ -28,6 +28,7 @@
 <script src="<c:url value="resources/script/jquery.min.js" />"></script>
 <script src="<c:url value="resources/script/bootstrap.bundle.min.js"/>"></script>
 <script src="<c:url value="resources/script/script.js"/>"></script>
+<script src="<c:url value="resources/script/toastr.js"/>"></script>
 
 <c:if test="${pageContext.request.servletPath.contains(\"shopping-cart\")}">
     <script src="<c:url value="resources/script/shopping-cart.js"/>"></script>
