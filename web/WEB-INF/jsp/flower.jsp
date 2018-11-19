@@ -6,6 +6,7 @@
         <c:out value="${error_flower}"/>
     </div>
 </c:if>
+<div class="container">
 <div class="row shopping-cart">
     <table class="table table-bordered table-striped">
         <thead>
@@ -25,5 +26,6 @@
         </tr>
         </tbody>
     </table>
+</div>
 </div>
 <jsp:include page="component/footer.jsp"></jsp:include>
