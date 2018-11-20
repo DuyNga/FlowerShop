@@ -20,26 +20,35 @@ $(function(){
         return vars;
     }
 
-    // $("#btnRegister").click(register);
-    //
-    // function register() {
-    //     let user = {};
-    //     user.userName = $("#username").val();
-    //     user.passWord = $("#password").val();
-    //     user.email = $("#email").val();
-    //     user.fullName = $("#fullname").val();
-    //     user.phone = $("#phone").val();
-    //     user.address = $("#address").val();
-    //
-    //     $.ajax({
-    //         "url": "register",
-    //         "type": "POST",
-    //         "data": {"userNew": JSON.stringify(user)},
-    //         "success": function () {
-    //             toastr["success"](user.username + " is created!");
-    //             $(location).attr("href", "/profile");
-    //         }
-    //     });
+    $("#btnRegister").click(register);
+
+    function register() {
+        let user = {};
+        user.userName = $("#username").val();
+        user.passWord = $("#password").val();
+        user.email = $("#email").val();
+        user.fullName = $("#fullname").val();
+        user.phone = $("#phone").val();
+        user.address = $("#address").val();
+
+        $.ajax({
+            "url": "/register",
+            "type": "POST",
+            "data": {"userNew": JSON.stringify(user)},
+            "success": function (data) {
+                resp = JSON.parse(data);
+                if (resp.userName === "")
+                {
+                    toastr["error"]("This username is exists.");
+                    $("#password").val("");
+                }
+                else {
+                    $(location).attr("href", "/profile");
+                    toastr["success"](resp.userName + " is created!");
+                }
+            }
+        });
+    }
 
     // $.post("register", {userNew: JSON.stringify(user)})
     //     .success(function () {
