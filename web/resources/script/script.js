@@ -1,10 +1,9 @@
-
-$(function(){
-    $('.addToCart').click(function(){
+$(function () {
+    $('.addToCart').click(function () {
         console.log($(this).attr('href'));
         let searchParams = new URLSearchParams($(this).attr('href'));
         let id = "#item_" + getUrlVars($(this).attr('href'))['flowerId'];
-        $.post($(this).attr('href')).done(function(data){
+        $.post($(this).attr('href')).done(function (data) {
             console.log(data);
             $("#num-of-items").text(data);
             toastr["success"](`${$(id).text()} is added successfully! Please check the cart for details.`);
@@ -14,7 +13,7 @@ $(function(){
 
     function getUrlVars(url) {
         var vars = {};
-        var parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        var parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
             vars[key] = value;
         });
         return vars;
@@ -31,7 +30,7 @@ $(function(){
         user.phone = $("#phone").val();
         user.address = $("#address").val();
 
-        $.ajax({
+        /*$.ajax({
             "url": "/register",
             "type": "POST",
             "data": {"userNew": JSON.stringify(user)},
@@ -48,6 +47,20 @@ $(function(){
                 }
             }
         });
+        */
+
+        $.post("", {"userNew": JSON.stringify(user)})
+            .done(function (data) {
+                let resp = JSON.parse(data);
+                if (resp.userName === "") {
+                    toastr["error"]("This username is exists.");
+                    $("#password").val("");
+                }
+                else {
+                    $(location).attr("href", "/profile");
+                    toastr["success"](resp.userName + " is created!");
+                }
+            })
     }
 
     // $.post("register", {userNew: JSON.stringify(user)})
